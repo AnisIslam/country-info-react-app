@@ -1,0 +1,16 @@
+img{
+    width: 30%;
+}
+.country{
+    border: 1px solid purple;
+    margin: 20px;
+    padding: 20px;
+    align-items: center;
+    width: 300px;
+    justify-content: center;
+    
+
+}
+.country-div{
+    display: gird;
+}
