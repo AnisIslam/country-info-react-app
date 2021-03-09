@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import './Countries.css'
@@ -13,21 +14,19 @@ const Countries = (props) => {
     //     history.push(`/country/${name}`);
     // }
     return (
-        <div className='country-div'>
-            <div className='country' >
-                <h2>Name : {name}</h2>
-                <h2>Capital : {capital}</h2>
-                <h2><img src={flag} alt="" /> </h2>
-                <Link to={`/country/${name}`}>
-                    <button> Details </button>
-                </Link>
-                {/* <button onClick={() => handleClick(name)} > 
-                Click Here for Details</button> */}
-
-            </div>
-
+        <div className='align-item-center'>
+            <Card style={{ width: '300px' }} className=' p-2 m-2'>
+                <Card.Img variant="" src={flag} />
+                <Card.Body className= 'bg-dark text-white mt-2' >
+                    <Card.Title>{name}</Card.Title>
+                    <p><b>Capital: </b>{capital}</p>
+                    <p><b>Region: </b>{region}</p>
+                    <Link to={`/country/${name}`}>
+                        <Button variant="primary"> Details</Button>
+                    </Link>
+                </Card.Body>
+            </Card>
         </div>
-
 
     );
 };

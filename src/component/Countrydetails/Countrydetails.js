@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import { Card, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Countrydetails = () => {
     const { countryName } = useParams();
@@ -15,16 +17,26 @@ const Countrydetails = () => {
     }, [])
 
     const { name, area, capital, flag, population, region } = country;
-    
+
     console.log(country);
     return (
         <div>
-            <h3>Details of : {name}</h3>
-            <h3>Population: {population}</h3>
-            <img src={flag} alt="" />
-            <h3>Area: {area}</h3>
-            <p>Capital: {capital}</p>
 
+            <Card className="p-2 text-center bg-dark text-white" style={{ width: '18rem' }}>
+                <Card.Img variant="top" src={flag} />
+                <Card.Body>
+                    <Card.Title>Details of : {name}</Card.Title>
+                    <Card.Text>
+                        <p>Population: {population}</p>
+                        <p>Area: {area}</p>
+                        <p>Capital: {capital}</p>
+
+                    </Card.Text>
+                    <Link to={'/home'}>
+                        <Button variant="primary"> Go to Home</Button>
+                    </Link>
+                </Card.Body>
+            </Card>
         </div>
     );
 };
